@@ -33,8 +33,8 @@ class ImplPokemonRepository @Inject constructor(private val apiService: ApiServi
                 }
             } catch (e: HttpException) {
                 emit(ResultState.Failed(e.message(), e.code()))
-            } catch (e: Throwable) {
-                emit(ResultState.Exception(e))
+            } catch (e: Exception) {
+                emit(ResultState.Failed(e.stackTraceToString(), 0))
             }
         }.flowOn(Dispatchers.IO)
     }
@@ -55,7 +55,7 @@ class ImplPokemonRepository @Inject constructor(private val apiService: ApiServi
             } catch (e: HttpException) {
                 emit(ResultState.Failed(e.message(), e.code()))
             } catch (e: Throwable) {
-                emit(ResultState.Exception(e))
+                emit(ResultState.Failed(e.stackTraceToString(), 0))
             }
         }.flowOn(Dispatchers.IO)
     }
