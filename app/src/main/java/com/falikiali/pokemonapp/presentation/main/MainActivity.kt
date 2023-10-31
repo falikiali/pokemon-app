@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
                         startActivity(i).also { finish() }
                         overridePendingTransition(0, R.anim.fade_out)
                     }
-                    is ResultState.Failed -> Log.e("Error", it.error)
+                    is ResultState.Failed -> showSnackbar("Please try again")
                     else -> {}
                 }
             }

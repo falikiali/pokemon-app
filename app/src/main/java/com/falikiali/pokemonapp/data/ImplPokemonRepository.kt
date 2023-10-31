@@ -80,7 +80,7 @@ class ImplPokemonRepository @Inject constructor(private val apiService: ApiServi
     }
 
     override fun searchPokemon(search: String, sortType: Int?): Flow<List<Pokemon>> {
-        return pokemonDao.searchPokemon(search, sortType).map { list ->
+        return pokemonDao.searchPokemon("%$search%", sortType).map { list ->
             list.map {
                 it.toDomain()
             }

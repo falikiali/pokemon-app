@@ -23,6 +23,6 @@ interface PokemonDao {
     @Query("SELECT * FROM tbl_pokemon WHERE name LIKE :search ORDER BY " +
             "CASE WHEN :sortType = 1 THEN name END ASC, " +
             "CASE WHEN :sortType = 2 THEN name END DESC")
-    fun searchPokemon(search: String?, sortType: Int?): Flow<List<PokemonEntity>>
+    fun searchPokemon(search: String, sortType: Int?): Flow<List<PokemonEntity>>
 
 }

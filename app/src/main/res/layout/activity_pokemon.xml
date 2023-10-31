@@ -6,6 +6,31 @@
     android:layout_height="match_parent"
     tools:context=".presentation.PokemonActivity">
 
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/Theme.MovieApp.AppBarOverlay">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:popupTheme="@style/Theme.MovieApp.PopupOverlay" />
+
+        <androidx.appcompat.widget.SearchView
+            android:id="@+id/sv_search"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="16dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_search_bar"
+            app:iconifiedByDefault="false"
+            app:defaultQueryHint="Search Movie" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -14,9 +39,7 @@
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_pokemon"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginEnd="16dp"
+            android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
             android:clipToPadding="false"
