@@ -11,7 +11,7 @@ data class DetailPokemonResponse(
     val sprites: SpritesPokemonResponse
 ) {
     fun toDomain(): DetailPokemon {
-        return DetailPokemon(sprites.frontDefault, abilities.map { it.name })
+        return DetailPokemon(sprites.frontDefault, abilities.map { it.ability.name })
     }
 }
 
@@ -21,6 +21,11 @@ data class SpritesPokemonResponse(
 )
 
 data class AbilitiesPokemonResponse(
+    @field:SerializedName("ability")
+    val ability: AbilityPokemonResponse
+)
+
+data class AbilityPokemonResponse(
     @field:SerializedName("name")
     val name: String
 )

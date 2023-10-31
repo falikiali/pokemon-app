@@ -1,4 +1,4 @@
-package com.falikiali.pokemonapp.presentation
+package com.falikiali.pokemonapp.presentation.pokemon
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,10 +6,8 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.falikiali.pokemonapp.R
 import com.falikiali.pokemonapp.databinding.ActivityPokemonBinding
-import com.falikiali.pokemonapp.presentation.pokemon.PokemonAdapter
-import com.falikiali.pokemonapp.presentation.pokemon.PokemonViewModel
+import com.falikiali.pokemonapp.presentation.detail.DetailPokemonActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -39,9 +37,9 @@ class PokemonActivity : AppCompatActivity() {
 
     private fun initRv() {
         pokemonAdapter = PokemonAdapter(onItemClick = {
-//            val intent = Intent(this@PokemonActivity, DetailMovieActivity::class.java)
-//            intent.putExtra(DetailMovieActivity.ID_MOVIE, it.id)
-//            startActivity(intent)
+            val intent = Intent(this@PokemonActivity, DetailPokemonActivity::class.java)
+            intent.putExtra(DetailPokemonActivity.EXTRA_NAME, it.name)
+            startActivity(intent)
         })
 
         with(binding.rvPokemon) {

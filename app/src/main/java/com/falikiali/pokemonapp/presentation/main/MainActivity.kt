@@ -3,13 +3,10 @@ package com.falikiali.pokemonapp.presentation.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.Handler
-import android.util.Log
-import android.widget.Toast
 import androidx.activity.viewModels
 import com.falikiali.pokemonapp.R
 import com.falikiali.pokemonapp.databinding.ActivityMainBinding
-import com.falikiali.pokemonapp.presentation.PokemonActivity
+import com.falikiali.pokemonapp.presentation.pokemon.PokemonActivity
 import com.falikiali.pokemonapp.utils.ResultState
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
